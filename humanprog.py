@@ -28,6 +28,9 @@ while True:
 	elif ('run' in p) and ('chrome' in p):
 	    os.system('chrome')
 
+	elif('run' in p) or ('open' in p) and ('edge' in p):
+	    os.system('start microsoft-edge:')
+
 	elif (('run' in p) or ('execute' in p)) and (('notepad' in p) or ('editor' in p)):
 	    os.system('notepad')
 
@@ -47,6 +50,9 @@ while True:
 
 	elif (('run' in p) or ('start' in p)) and ('http' in p):
 	    os.system('Powershell.exe C:\Apache24\bin\httpd.exe -k install')
+	
+	elif('open' in p) or ('run' in p) and ('paint' in p):
+	    os.system('start mspaint')
 
 	elif(('run' in p) or ('configure' in p) or ('start' in p)) and ('ssh' in p):
 	    os.system('Powershell.exe Start-Service sshd')
@@ -57,7 +63,9 @@ while True:
 	    os.system('start cmd.exe /K cd {}'.format(path))
 
 	elif(('run' in p) or ('start' in p)) and ('python' in p):
-	    os.system('start cmd.exe /K python')
+	    py = 'cmd.exe /K python'
+	    os.system('start {}'.format(py))
+	    
 
 	elif(('open' in p) or ('start' in p)) and ('calculator' in p):
 	    os.system('calc').time.sleep(2)
@@ -74,6 +82,11 @@ while True:
 	elif(('search' in p) or ('open' in p)) and ('google' in p):
 	    os.system('start https://www.google.com/')
 	
+	elif(('kill' in p) or ('terminate' in p)) and (('process' in p) or ('program' in p)):
+	    os.system('tasklist')
+	    kill = int(input('enter the PID of process, from above list: '))
+	    os.system('taskkill /PID {} /F'.format(kill))	
+
 	elif ('exit' in p) or ('quit' in p):
 	    break
 
