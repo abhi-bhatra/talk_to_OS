@@ -1,5 +1,4 @@
 #This is a program made for interaction between Windows O.S. and User
-#install python modules pyttsx3, time, calendar for better experience (python -m pip install <module>)
 from pyttsx3 import speak
 import os
 import time
@@ -66,12 +65,14 @@ while True:
 	    py = 'cmd.exe /K python'
 	    os.system('start {}'.format(py))
 	    
-
 	elif(('open' in p) or ('start' in p)) and ('calculator' in p):
 	    os.system('calc').time.sleep(2)
 
 	elif(('open' in p) or ('start' in p)) and (('computer' in p) or ('explorer' in p)):
 	    os.system('start explorer')
+
+	elif(('open' in p) or ('run' in p)) and ('firefox' in p):
+	    os.system('start C:\Program Files\Mozilla Firefox\firefox.exe')
 
 	elif(('start' in p) or ('open' in p) or ('run' in p)) and ('settings' in p):
 	    os.system('start ms-settings:')
@@ -80,12 +81,18 @@ while True:
 	    os.system('start %temp%')
 
 	elif(('search' in p) or ('open' in p)) and ('google' in p):
-	    os.system('start https://www.google.com/')
+	    os.system('start /D https://www.google.com/')
 	
 	elif(('kill' in p) or ('terminate' in p)) and (('process' in p) or ('program' in p)):
 	    os.system('tasklist')
 	    kill = int(input('enter the PID of process, from above list: '))
-	    os.system('taskkill /PID {} /F'.format(kill))	
+	    os.system('taskkill /PID {} /F'.format(kill))
+	
+	elif(('open' in p) or ('start' in p)) and ('camera' in p):
+	    os.system('start microsoft.windows.camera:')
+
+	elif('ip' in p):
+	    os.system('ipconfig | find /N "IPv4"')
 
 	elif ('exit' in p) or ('quit' in p):
 	    break
