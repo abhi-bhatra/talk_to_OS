@@ -25,3 +25,6 @@ C:> change folder
 C:> open calculator
 C:> open google 
 C:> run new prompt
+
+## Note: 
+> This project is under development stage and fully operational on Windows Command Prompt
