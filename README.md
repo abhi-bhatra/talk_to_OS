@@ -4,11 +4,14 @@
 ## Initiative under IIEC-RISE
 - Under the mentorship of Vimal Daga, I have created my first menu using Python code which will execute OS based programs
 ---
-## Setup
+## Install dependencies
 - install Python using 'https://www.python.org/'
 - now install python module:
 ```shell
 C:> python -m pip install pyttsx3
+C:> python -m pip install beautifulsoup4==4.6.0
+C:> python -m pip install requests==2.21.0
+C:> python -m pip install lxml==4.3.0
 ```
 ---
 ## Features
@@ -26,7 +29,7 @@ C:> open calculator
 C:> open google 
 C:> run new prompt
 
-## Note: 
+Note: 
 > This project is under development stage and fully operational on Windows Command Prompt
 ```
 ## Glimpse of Program
